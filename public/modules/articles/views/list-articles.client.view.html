@@ -1,0 +1,31 @@
+<section data-ng-controller="ArticlesController" data-ng-init="find()">
+	<div class="page-header">
+		<h1>Negocios creados</h1>
+	</div>
+	<div class="list-group">
+		
+		<!-- map -->
+		
+		<map center="[0,0]" zoom="1">
+
+  			<marker ng-repeat='article in articles' position='[{{article.lat}},{{article.lon}}]' visible="true" on-click="gotolink(event,article)">
+  		</marker>
+		
+		</map>
+
+		<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+
+			<h4 class="list-group-item-heading" data-ng-bind="article.nombre"></h4>
+
+			<p class="list-group-item-text" data-ng-bind="article.direccion"></p>
+			<p class="list-group-item-text" data-ng-bind="article.lat"></p>
+			<p class="list-group-item-text" data-ng-bind="article.lon"></p>
+		</a>
+
+	</div>
+
+	<!-- if theres no articles length. -->
+	<div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
+		No hay negocios creados <a href="/#!/articles/create">.</a>?
+	</div>
+</section>

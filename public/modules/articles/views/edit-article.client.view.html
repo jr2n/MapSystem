@@ -1,0 +1,78 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1>Editar comercio</h1>
+	</div>
+	<div class="col-md-12">
+		<form name="articleForm" class="form-horizontal" data-ng-submit="update(articleForm.$valid)" novalidate>
+			<fieldset>
+
+				<map zoom ='5'>
+
+  				<marker position="[0,0]" visible="true"></marker>
+  				<!-- a initial position must be set because it will prompt the users current geolocation and set it to that -->
+				</map>
+
+				<!-- nombre -->
+				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.nombre.$invalid}">
+					<label class="control-label" for="nombre">Nombre</label>
+					<div class="controls">
+						<input name="nombre" type="text" data-ng-model="article.nombre" id="nombre" class="form-control" placeholder="Nombre" required>
+					</div>
+					<div ng-show="submitted && articleForm.nombre.$invalid" class="help-block">
+						<p ng-show="articleForm.nombre.$error.required" class="text-danger">Nombre is required</p>
+					</div>
+				</div>
+
+				<!-- direccion -->
+				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.direccion.$invalid}">
+					<label class="control-label" for="direccion">Direccion</label>
+					<div class="controls">
+						<textarea name="direccion" data-ng-model="article.direccion" id="direccion" class="form-control" cols="10" rows="1" placeholder="Direccion" required></textarea>
+					</div>
+
+					<div ng-show="submitted && articleForm.direccion.$invalid" class="help-block">
+						<p ng-show="articleForm.direccion.$error.required" class="text-danger">Direccion is required</p>
+					</div>
+				</div>
+				<!-- lat -->
+				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.direccion.$invalid}">
+					<label class="control-label" for="lat">Latitude</label>
+					<div class="controls">
+						<textarea name="direccion" data-ng-model="article.lat" id="direccion" class="form-control" cols="10" rows="1" placeholder="Latitude" required></textarea>
+					</div>
+
+					<div ng-show="submitted && articleForm.direccion.$invalid" class="help-block">
+						<p ng-show="articleForm.direccion.$error.required" class="text-danger">Latitude is required</p>
+					</div>
+				</div>
+
+				<!-- lon -->
+
+				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.direccion.$invalid}">
+					<label class="control-label" for="lon">Longitude</label>
+					<div class="controls">
+						<textarea name="direccion" data-ng-model="article.lon" id="direccion" class="form-control" cols="10" rows="1" placeholder="Longitude" required></textarea>
+						
+					</div>
+
+					<div ng-show="submitted && articleForm.direccion.$invalid" class="help-block">
+						<p ng-show="articleForm.direccion.$error.required" class="text-danger">Longitude is required</p>
+					</div>
+				</div>				
+
+
+
+
+				<!--  -->
+
+
+				<div class="form-group">
+					<input type="submit" value="Update" class="btn btn-default">
+				</div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>
