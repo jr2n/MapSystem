@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/mean-maps-dev',
 	app: {
-		title: 'mean_maps - Development Environment'
+		title: 'MapSystem - Development Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
