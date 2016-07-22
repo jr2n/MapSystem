@@ -185,24 +185,6 @@ describe('Comercios CRUD tests', function() {
 		});
 	});
 
-/*
-	it('No debe obtener informacion de un negocio en especifico sin haber iniciado sesion', function(done) {
-		// Create new article model instance
-		var articleObj = new Article(article);
-
-		// Save the article
-		articleObj.save(function() {
-			request(app).get('/articles/' + articleObj._id)
-				.end(function(req, res) {
-					// Set assertion
-					res.body.should.be.an.Object.with.property('nombre', article.nombre);
-
-					// Call the assertion callback
-					done();
-				});
-		});
-	});*/
-
 	it('Debe ser capaz de borrar un comercio al tener la sesion iniciada', function(done) {
 		agent.post('/auth/signin')
 			.send(credentials)
